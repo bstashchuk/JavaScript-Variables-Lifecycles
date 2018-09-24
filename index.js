@@ -1,22 +1,13 @@
-// // var without assignment
-// console.log(a); // undefined
-// var a;
+function fn() {
+  function fn2() {
+    // console.log(a); // a is not defined
+    a = 10; // a is decleard, initialized and assigned here
+    console.log(a); // 10
+  }
 
-// // var with assignment
-// b = 20;
-// console.log(b); // 20
-// var b;
+  fn2();
+  console.log(a); // 10
+}
 
-// // var inside of the function
-// function fn() {
-//   console.log(c); // undefined
-//   var c;
-//   d = 10;
-//   console.log(d);
-//   var d;
-// }
-
-// // console.log(c); // c is not defined
-// // console.log(d); // d is not defined
-
-// fn();
+fn();
+console.log(a); // 10 - a is decleared in the global scope
