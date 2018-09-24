@@ -1,13 +1,19 @@
-function fn() {
-  function fn2() {
-    // console.log(a); // a is not defined
-    a = 10; // a is decleard, initialized and assigned here
-    console.log(a); // 10
-  }
+// global scope
+// console.log(a); // a is not defined
+let a; // a is initialized with "undefined"
+console.log(a); // undefined
+a = 10; // a is assigned and has value 10
+console.log(a); // 10
 
-  fn2();
-  console.log(a); // 10
-}
+// // function
+// function fn() {
+//   // console.log(a); // a is not defined
+//   let a; // a is initialized with "undefined"
+//   console.log(a); // undefined
+//   a = 10; // a is assigned and has value 10
+//   console.log(a); // 10
+// }
 
-fn();
-console.log(a); // 10 - a is decleared in the global scope
+// // console.log(a); // not defined
+
+// fn();
