@@ -1,82 +1,72 @@
-// // What is const?
+// // 1. Make code readable for other developers
+// // BAD Code
+// a = "Mike";
+// b = "London";
 
-// // WRONG
-// // const - constant - value that doesn't change
-
-// // CORRECT
-// // const - variable that can't be reassigned
-// const myConst = []; // reference type
-// myConst.push("newElement");
-// myConst.push("anotherElement");
-// // myConst = [1, 2, 3];
-
-// const anotherConst = {}; // reference type
-// anotherConst.a = 10;
-// // anotherConst = {
-// //   b: 20
-// // };
-
-// const primitiveTypeConst = null; // primitive type
-// // primitiveTypeConst = undefined;
-
-// const PI = Math.PI;
-
-// // Scope
-// const a = 10;
-// console.log(a);
-
-// function fn() {
-//   console.log(a);
-//   const b = true;
-//   console.log(b);
+// function test(x, y) {
+//   d = "Hello " + x + " from " + y;
+//   return d;
 // }
 
+// var a, b, d;
+
+// console.log(test(a, b));
+
+// // GOOD Code
+// var personName = "Mike";
+// var personCity = "London";
+
+// function greet(personName, personCity) {
+//   var greetPerson = "Hello " + personName + " from " + personCity;
+//   return greetPerson;
+// }
+
+// console.log(greet(personName, personCity));
+
+// // 2. Always declare variables before first usage
+// // BAD Code
+// a = 10;
+// var a;
+
+// // GOOD Code
+// var a;
+// a = 10;
+
+// // 3. Always add "use strict" at the beginning of each JS file
+// // BAD Code
+// // b, d will be automatically decleared in the global scope
+// b = 10;
+// function fn() {
+//   d = b;
+//   return d;
+// }
 // fn();
 
-// // console.log(b);
-// {
-//   const b1 = 1;
+// // GOOD Code
+// "use strict";
+// var b = 10;
+// function fn() {
+//   var d = b;
+//   return d;
 // }
+// fn();
 
-// for (let j = 0; j < 5; j++) {
-//   console.log(j);
-// }
-
-// // Reassignment
-// const c = 1;
-// // c = 2; // not possible with const
-
+// // 4. Don't expose to the outer scopes locally used variables
+// // Expose
+// var myArray;
+// var i;
 // function fn2() {
-//   // c = 3; // not possible with const
+//   myArray = [1, 2, 3];
+//   for (i = 0; i < myArray.length; i++) {
+//     console.log(myArray[i]);
+//   }
 // }
 
+// //Don't expose
+// function fn2() {
+//   var myArray = [1, 2, 3];
+//   for (var i = 0; i < myArray.length; i++) {
+//     console.log(myArray[i]);
+//   }
+// }
 // fn2();
-
-// // Redeclaration
-// const d = false;
-// // const d = true;
-// console.log(d);
-
-// function fn3() {
-//   const d = 5;
-//   console.log(d);
-// }
-
-// fn3();
-
-// {
-//   const d = "abc";
-//   console.log(d);
-// }
-
-// console.log(d);
-
-// // Hoisting
-// const e = 5;
-
-// function fn4() {
-//   const f = 10;
-//   console.log(f);
-// }
-
-// fn4();
