@@ -1,22 +1,24 @@
-// Function declaration
+a = 2;
+const b = 5;
 
-console.log(smile); // function contents in the string format
-smile(); // declared, initialized and assigned
-
-function smile() {
-  console.log("☺");
-}
-
-smile(); // success
-
-// IIFE - Immediately Invoked Function Expression
-(function() {
-  console.log("That's function expression");
-})();
-
-// Function Expression assigned to the variable
-// console.log(sum(5, 10)); // TDZ
 const sum = function(a, b) {
   return a + b;
 };
-console.log(sum(5, 10)); // success
+
+if (b > a) {
+  let multResult = mult(a, b);
+  finalResult = multResult;
+} else {
+  let sumResult = sum(a, b);
+  finalResult = sumResult;
+}
+
+var a;
+
+function mult(a, b) {
+  result = a * b;
+  return result;
+  var result;
+}
+
+console.log(finalResult);
