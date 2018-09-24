@@ -1,72 +1,64 @@
-// // 1. Make code readable for other developers
-// // BAD Code
-// a = "Mike";
-// b = "London";
-
-// function test(x, y) {
-//   d = "Hello " + x + " from " + y;
-//   return d;
+// // Where to use CONST?
+// // Example 1
+// function multiplier(a) {
+//   const MULT = 10;
+//   return a * MULT;
 // }
 
-// var a, b, d;
+// console.log(multiplier(3));
+// console.log(multiplier(5));
 
-// console.log(test(a, b));
+// // Example 2 (Execute in Node.js)
+// const path = require("path");
 
-// // GOOD Code
-// var personName = "Mike";
-// var personCity = "London";
+// console.log(path.resolve());
 
-// function greet(personName, personCity) {
-//   var greetPerson = "Hello " + personName + " from " + personCity;
-//   return greetPerson;
+// // Example 3
+// const sum = function(a, b) {
+//   return a + b;
+// };
+
+// console.log(sum(2, 5));
+
+// // Where to use LET?
+// // Example 1
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
 // }
 
-// console.log(greet(personName, personCity));
+// // Example 2
+// function shortStr(str) {
+//   const MAX_LENGTH = 15;
 
-// // 2. Always declare variables before first usage
-// // BAD Code
-// a = 10;
-// var a;
-
-// // GOOD Code
-// var a;
-// a = 10;
-
-// // 3. Always add "use strict" at the beginning of each JS file
-// // BAD Code
-// // b, d will be automatically decleared in the global scope
-// b = 10;
-// function fn() {
-//   d = b;
-//   return d;
-// }
-// fn();
-
-// // GOOD Code
-// "use strict";
-// var b = 10;
-// function fn() {
-//   var d = b;
-//   return d;
-// }
-// fn();
-
-// // 4. Don't expose to the outer scopes locally used variables
-// // Expose
-// var myArray;
-// var i;
-// function fn2() {
-//   myArray = [1, 2, 3];
-//   for (i = 0; i < myArray.length; i++) {
-//     console.log(myArray[i]);
+//   if (str.length > MAX_LENGTH) {
+//     let newStr;
+//     newStr = str.substring(0, MAX_LENGTH) + "...";
+//     console.log(newStr);
+//   } else {
+//     // console.log(newStr); // not defined
+//     console.log(str);
 //   }
 // }
 
-// //Don't expose
-// function fn2() {
-//   var myArray = [1, 2, 3];
-//   for (var i = 0; i < myArray.length; i++) {
-//     console.log(myArray[i]);
+// shortStr("Long string example");
+// shortStr("Short");
+
+// // Where to use VAR?
+// // Example 1
+// var person = {
+//   name: "Bob",
+//   age: 25
+// };
+
+// function updatePerson(person) {
+//   var updatedPerson = {};
+
+//   if (person.name) {
+//     updatedPerson.name = person.name;
 //   }
+//   updatedPerson.updatedAt = new Date();
+
+//   return updatedPerson;
 // }
-// fn2();
+
+// console.log(updatePerson(person));
