@@ -1,33 +1,14 @@
-"use strict";
+/* Find all menu elements by selector ".nav-link"
+or by className "nav-link".
 
-const numbers1 = [23, 87, 110, 11, 20, 5, 34];
-const numbers2 = [11, 21, 31];
+Use "for" loop to iterate through all menu items
+Inside of the loop add "onclick" event handler to 
+each menu item.
 
-const onlyOddNumbers = function(arr) {
-  var oddNumbers = [];
-  var evenNumbersQuantity = 0;
-  const LEN = arr.length;
-
-  for (let i = 0; i < LEN; i++) {
-    arr[i] % 2
-      ? oddNumbers.push(arr[i])
-      : evenNumbersQuantity++;
-  }
-
-  if (evenNumbersQuantity === 0) {
-    let info = "Array contains only odd numbers";
-    console.log(info);
-  } else {
-    let info =
-      "There are " + evenNumbersQuantity + " even numbers";
-    console.log(info);
-  }
-
-  return {
-    oddNumbers: oddNumbers,
-    evenNumbersQuantity: evenNumbersQuantity
-  };
-};
-
-console.log(onlyOddNumbers(numbers1));
-console.log(onlyOddNumbers(numbers2));
+In the "onclick" event handler:
+1. Remove first "active" class from all
+ menu elements
+2. Add "active" class to the clicked menu element
+3. Log to the console message with the name
+ of the clicked menu item
+*/
