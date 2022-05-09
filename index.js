@@ -1,18 +1,18 @@
-numbers1 = [23, 87, 110, 11, 20, 5, 34];
-numbers2 = [11, 21, 31];
+const numbers1 = [23, 87, 110, 11, 20, 5, 34];
+const numbers2 = [11, 21, 31];
 
 var onlyOddNumbers = function(arr) {
-  oddNumbers = [];
-  EVEN_NUMBERS_QUANTITY = 0;
-  len = arr.length;
+  let oddNumbers = [];
+  let EVEN_NUMBERS_QUANTITY = 0;
+  const len = arr.length;
 
-  for (i = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     arr[i] % 2
       ? oddNumbers.push(arr[i])
       : EVEN_NUMBERS_QUANTITY++;
   }
 
-  var info;
+  let info;
   if (EVEN_NUMBERS_QUANTITY === 0) {
     info = "Array contains only odd numbers";
     console.log(info);
@@ -29,10 +29,7 @@ var onlyOddNumbers = function(arr) {
     EVEN_NUMBERS_QUANTITY: EVEN_NUMBERS_QUANTITY
   };
 
-  var oddNumbers;
 };
-
-var EVEN_NUMBERS_QUANTITY;
 
 console.log(onlyOddNumbers(numbers1));
 console.log(onlyOddNumbers(numbers2));
